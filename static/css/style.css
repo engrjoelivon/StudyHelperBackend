@@ -1,0 +1,77 @@
+body{
+
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    font-size: 0;
+    font-size: 20px;
+}
+
+.header{
+    background-color: forestgreen;
+    padding: 20px;
+    font-size: 40px;
+   margin: 0px;
+   }
+
+   .contentbody,#titledef{
+
+       background-color: gray;
+       padding-left: 20px;
+       font-size: 20px;
+       margin-top: -22px;
+        }
+        #titledef{
+           background-color: transparent;
+
+
+        }
+
+
+
+   h3{
+
+       padding:20px;
+   }
+
+   .content{
+
+         margin: 0px;
+         padding: 0px;
+         position: relative;
+
+   }
+
+
+
+
+.realcontent{
+
+    margin-left: 20px;
+    margin-right: 20px;
+    color: black;
+
+
+}
+
+#doc_title{
+
+    margin: auto;
+    width: 75%;
+    text-align: center
+
+
+}
+
+
+.hidden {
+display: none;
+}
+
+button {
+
+
+     font-size: 30px;
+
+
+}
