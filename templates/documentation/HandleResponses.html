@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Handle responses</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="top">
+
+    Documentation
+</div>
+<h1>
+    HandleResponses
+</h1>
+<h3>
+    get_json_from_queryset(queryset)
+</h3>
+<p>
+    Accepts a queryset and return a json string in the form of list of lists
+    every list in the list would represent a row in the table.
+    Each index of the list will hold each column in a row
+</p>
+
+
+<div class="content">
+    <h2 >
+Constructor
+    </h2>
+    <p>
+        initializes instance variable list_value as a list
+    </p>
+
+    <h5>
+      Argument
+    </h5>
+    <p>
+    Accepts no argument
+    </p>
+
+
+
+</div>
+
+<div class="content">
+    <h3 >
+    set_list(self,value):
+    </h3>
+    <p>
+     function accepts a value,appends this value to the list_value() instance variable declared inside its constructor.Values passed into this variable should
+        be of the same type
+    </p>
+    <h5>
+      Argument
+    </h5>
+    <p>
+      value
+    </p>
+    <h5>
+        Return
+    </h5>
+    <p>
+      returns no value
+    </p>
+
+
+</div>
+
+
+<div class="content">
+    <h3 >
+    get_json_as_map_of_list(self):
+    </h3>
+    <p>
+     If set_list() is called,it will populate a list with string,get list would then be called to return this list as json.
+    </p>
+    <h5>
+      Argument
+    </h5>
+    <p>
+      accepts no argument
+    </p>
+    <h5>
+        Return
+    </h5>
+    <p>
+      returns list as json,string "keys" will be used as the for the map
+    </p>
+
+
+</div>
+
+
+
+<div class="content">
+    <h3 >
+    def set_list(self,value):
+    </h3>
+    <p>
+     every time this function is called it accepts a value and adds it to the list_value=list() instance variable
+    </p>
+    <h5>
+      Argument
+    </h5>
+    <p>
+      accepts a list.For an instance of this argument should be of the same datatype
+    </p>
+    <h5>
+        Return
+    </h5>
+    <p>
+      returns no value
+    </p>
+
+
+</div>
+
+
+
+
+
+
+</body>
+</html>
+
+
+

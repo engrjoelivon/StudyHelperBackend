@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+Sign up
+
+<form method="post" action=".">
+     {% csrf_token %}
+
+{{ userinfo.errors   }}
+{{ userinfo.as_p }}
+
+    <input hidden name="">
+    <input type="submit" name="submit">
+</form>
+
+</body>
+</html>

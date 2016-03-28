@@ -1,0 +1,46 @@
+
+
+{% extends "studyhelper/base.html"  %}
+<!--  display the title list of every group         -->
+
+    <title></title>
+<!--first block   -->
+{% block group  %}
+     <ul>
+     {% for group in groupNames %}
+       <li>
+         <a href="/titlelist/{{group.slugGroups}}">{{group.groupName}} </a>
+
+       </li>
+       {% endfor %}
+   </ul>
+
+ {%endblock%}
+<!--          end of first block start of second block       -->
+
+{% block topictitles  %}
+<ul>
+    {% if titlesList %}
+ {% for title in titlesList %}
+
+<li><a href="/titles/{{title.slug}}">{{title.title}}</a></li>
+ {%endfor%}
+    {% endif%}
+</ul>
+
+{%endblock%}
+
+
+<!--End of second block start of third block    -->
+
+{% block contenttitle%}
+
+
+
+{% endblock%}
+
+
+
+
+
+

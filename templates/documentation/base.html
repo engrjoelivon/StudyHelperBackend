@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+
+        <title>Documentation - {% block title %} {% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body >
+
+<div id="top" class="Header">
+
+    Documentation
+</div>
+
+
+
+<div class="content">
+    <H1 >
+    {% block pagetitle %} {% endblock %}
+   </H1>
+
+   <span>  {% block pagetitlebody %}{% endblock %} </span>
+
+</div>
+
+
+<div class="content">
+
+
+  <h3  >
+
+    {% block functiontitle %}{% endblock %}
+ </h3>
+{% block functionbody %}{% endblock %}
+
+
+ <h5>
+        Argument
+ </h5>
+     {% block contentargument %}{% endblock %}
+  <h5>
+      return
+  </h5>
+      {% block contentreturn %}{% endblock %}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

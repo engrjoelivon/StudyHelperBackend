@@ -1,0 +1,33 @@
+
+{% extends "studyhelper/base.html"  %}
+
+    <title></title>
+<!--first block   -->
+{% block group  %}
+     <ul>
+     {% for group in groupdatas %}
+       <li>
+         <a href="/titlelist/{{group.slugGroups}}">{{group.groupName}} </a>
+
+       </li>
+       {% endfor %}
+   </ul>
+
+ {%endblock%}
+<!--          end of first block start of second block       -->
+
+{% block topictitles  %}
+
+
+{%endblock%}
+
+
+<!--End of second block start of third block    -->
+
+{% block contenttitle%}
+
+
+
+{% endblock%}
+</body>
+</html>

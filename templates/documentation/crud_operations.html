@@ -1,0 +1,61 @@
+{% extends "documentation/base.html"  %}
+
+
+{% block title %} crud operations {% endblock %}
+
+{% block pagetitle %} CrudOperations {% endblock %}
+
+{% block pagetitlebody %} CrudOperations represents the base class,to used to perfrom queries on a database models
+    its constructor would accept a username object.That it will use to set the username for the class {% endblock %}
+
+
+
+
+{% block functiontitle %}get_whole_record(model_name){% endblock %}
+
+{% block functionbody %}because the table name must be explicitely defined,this method is defined as abstract every subclass of this class must specify
+an implementation for its table,to perform a query.
+{% endblock %}
+{% block contentargument %}accepts no arguments{% endblock %}
+{% block contentreturn %}{% endblock %}
+<h3 >
+    get_list_from_query_set(query_Set)
+</h3>
+<p>
+  accepts a query set and returns a list
+    </p>
+</div>
+
+
+
+<div class="content">
+    <h3 >
+     get_list_from_query_set(self):
+    </h3>
+    <p>
+     Function returns a list holding all the rows in a queried table
+    </p>
+    <h5>
+      Argument
+    </h5>
+    <p>
+      no arugment
+    </p>
+    <h5>
+        Return
+    </h5>
+    <p>
+     returns a list of list each list will be holding a row of queryset.The attributes of the rw
+    </p>
+
+
+</div>
+
+
+
+
+</body>
+</html>
+
+
+

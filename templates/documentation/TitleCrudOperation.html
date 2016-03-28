@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+
+        Title crud operations
+    </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body >
+
+<div id="top" >
+
+    Documentation
+</div>
+
+
+
+<div class="Header">
+    <h1 >
+    Title Crud Operations
+   </h1>
+
+   <span class="contentbody">
+       Title CrudOperations extends the base class CrudOperation
+   </span>
+
+</div>
+<h2 >
+    Instance Variables
+   </h2>
+<h2 >
+    Constructor
+   </h2>
+<h2 >
+    Methods
+   </h2>
+<div class="content">
+
+
+  <h3  >
+    get_whole_record(self)
+ </h3>
+  <span class="contentbody">
+        Inherites the get_whole_record() from its base class and implements the body,
+        Using the Title class and the username name set in the constructor to get whole record from the titles table
+</span>
+    <h5>
+      Argument
+  </h5>
+ <h5>
+        return
+ </h5>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="content">
+    <h3 >
+       set_row_as_list(self,query_set):
+    </h3>
+   <span class="content">
+    Function accepts a query set,calls the get attribute from row method,to generate a list of all the attributes present in the row
+        passes this list into set_list_from_query_Set method of its base class,this list will then be added to the querylist variable.
+</span>
+    <h5>
+      Argument
+    </h5>
+     <span class="contentbody">
+         Accepts a query set
+     </span>
+
+
+    <h5>
+        Return
+    </h5>
+       <span class="contentbody">
+          returns a list holding all the
+     </span>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="content">
+
+
+  <h3>
+   get_attributes_from_row(self,row):
+</h3>
+<span class="contentbody">
+        Inherites the get_attributes_from_row(self) from its base class and implements the body,
+        it accepts a row from the table
+     </span>
+    <h5>
+      Argument
+    </h5>
+    <span class="contentbody">
+           Accepts a row from the Title table.
+     </span>
+
+
+    <h5>
+        return
+    </h5>
+
+    <span class="contentbody">
+    returns a list that represents the title table,each attribute of the table will represent an index in the list.
+    </span>
+
+
+</div>
+
+<div class="content">
+<h3 >
+    get_list_from_query_set(query_Set)
+</h3>
+  <span class="contentbody">
+  accepts a query set and returns a list
+</span>
+ <h5>
+      Argument
+ </h5>
+
+    <h5>
+        return
+    </h5>
+
+</div>
+
+</body>
+</html>

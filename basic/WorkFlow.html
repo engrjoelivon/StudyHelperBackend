@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WorkFlow</title>
+</head>
+<body>
+<u><H1>Insert Records </H1></u>
+<H2>Insert record Function</H2>
+When an http request is made on the insertRecords def function.It accepts the request,knowing the request
+will be having a body of json object,strips the object of all its keys and values.One of the keys called
+    notifyinsert will be holding a list of username,devicename and the key for this record.When inside the notifyinsert key
+    it will call insertFunction passing in the list.
+    When the record is completely added,it will save the record.
+
+
+<H2>Insert Function</H2>
+<p> Insert function will accept a json string.convert the json string to python object,in this case a list.Strip the
+list of its values.After obtaining the value it will call getDevice().
+    When it obtains all the devises,it will call addAction(),to add this action to the addAction table.The action will
+    be added to all the devices with the username.
+</p>
+<H3>getDevice Function</H3>
+<p>
+    Accepts a username and a devicename.Its sole function is to return all the devices using the said username,but
+    exclude the device making the call ie the device making the request.
+    Before it performs the actions stated above,it checks if this device is already added by calling addDeviceInFile.
+
+</p>
+
+<H3>Add devise in file</H3>
+<p>
+    Accepts a username and a device name,checks the MyDevices table to confirm if the device has been previously added
+    if yes does nothing otherwise adds the device.
+</p>
+
+</body>
+</html>

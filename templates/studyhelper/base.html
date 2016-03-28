@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <title> {%  block title %}
+     home page
+    {%endblock%}</title>
+    <style type="text/css">
+
+a { text-decoration : none; color : #000; }
+
+        table,tr,td {
+
+    width: 800px;
+    padding: 25px;
+    border: 1px solid ;
+    margin: 30px;
+}
+</style>
+</head>
+<body>
+{{user.username}}
+   <table>
+
+
+      <tr>
+        <td>
+
+            {% block group  %}
+
+
+ {%endblock%}
+            <!--END FIRST COLUMN-->
+        </td>
+        <td>
+          {% block topictitles  %}
+            sec block
+          {%endblock%}
+          <!--ENDED SECOND COLUMN-->
+        </td>
+        <td>
+            {% block contenttitle%}
+   third block
+{% endblock%}
+            <!--ENDED THIRD COLUMN-->
+        </td>
+      </tr>
+
+
+  </table>
+
+
+
+
+
+</body>
+</html>
