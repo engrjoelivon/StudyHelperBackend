@@ -2,9 +2,7 @@
 from basic.crud_operations import CrudOperations
 from basic.models import Titles,Actions,Base
 from basic.ActionCrudOperations import ActionsOperation
-from basic.ActionCrudOperations import ActionsOperation
-from basic.device import getDevise
-
+from basic.VariesCrudOperation import generate_record,get_attributes_from_row_as_list
 
 class TitlecrudOperation(CrudOperations,object):
 
@@ -23,49 +21,28 @@ class TitlecrudOperation(CrudOperations,object):
 
 
       def get_attributes_from_row_as_list(self,this_row):
-            this_list=list()
-            this_list.append(this_row.answer_text)
-            this_list.append(this_row.date_created)
-            this_list.append(this_row.difficulty)
-            this_list.append(this_row.expiry)
-            this_list.append(this_row.given)
-            this_list.append(this_row.groupname)
-            this_list.append(this_row.no_of_time_accessed)
-            this_list.append(this_row.priority)
-            this_list.append(this_row.time_last_given)
-            this_list.append(this_row.questions)
-            this_list.append(this_row.title)
-            this_list.append(this_row.unique_key)
-            return   this_list
+            """
+           Row will always be different based on the table attribute for that reason the get_attributes_from_row_as_list has been seperated
+           into the Varied crud operation module.get_attributes_from_row_as_list here will always call the Variaes crud operation
+           get_attributes_from_row_as_list.
+          """
+            return get_attributes_from_row_as_list(this_row)
 
 
 
-      def generate_record(self, list_holding_record,record):
-         try:
-            print("generate record key"+list_holding_record[1])
-            key=list_holding_record[1]
-            record.username=list_holding_record[0]
-            record.unique_key=key
-            record.groupname=list_holding_record[3]
-            record.title=list_holding_record[4]
-            record.questions=list_holding_record[5]
-            record.answer_text=list_holding_record[6]
-            record.difficulty=(list_holding_record[7])
-            record.priority=(list_holding_record[8])
-            record.date_created=(list_holding_record[9])
-            record.expiry=(list_holding_record[10])
-            record.no_of_time_accessed=(list_holding_record[11])
-            record.given=(list_holding_record[12])
-            record.time_last_given=(list_holding_record[13])
-            record.save()
-         except:
-            print("already exist")
-         return key
+      def generate_record(self, list_holding_record):
+          """
+          Records attributes will always be different for that reason the generate_record has been seperated
+          into the Varied crud operation module.Generate record here will always call the Variaes crud operation
+          generate record.
+          """
+          return generate_record(list_holding_record,self.table_object)
+
 
       def insert_record(self, list_holding_record):
 
             key=list_holding_record[1]
-            self.generate_record(list_holding_record,Titles())
+            self.generate_record(list_holding_record)
             a_c_o=ActionsOperation(list_holding_record[0])
             a_c_o.set_inserted_actions(key,list_holding_record[2])
             return key
@@ -78,13 +55,13 @@ class TitlecrudOperation(CrudOperations,object):
            if self.check_which_to_update(key,device_name):
             realkey=self.get_Real_key(key)
             record=Titles.objects.get(unique_key__icontains=realkey,username=self.username)
-            self.generate_record(list_holding_record,record)
+            self.generate_record(list_holding_record)
             self.notify_other_device_of_update(key,device_name)
 
 
          except:
 
-             self.generate_record(list_holding_record,Titles())
+             self.generate_record(list_holding_record)
          return list_holding_record[1]
 
 
@@ -134,9 +111,10 @@ class TitlecrudOperation(CrudOperations,object):
            returnedvalue=None
            try:
                key=self.get_Real_key(updated_record_list[1])
-               print(key)
-               title=Titles.objects.get(username=self.username,unique_key__icontains=key)
-               title.no_of_time_accessed=updated_record_list[2]
+               print(key," for update")
+
+               title=self.table_name.objects.get(username=self.username,unique_key__icontains=key)
+               title.no_of_time_accessed += 1
                title.given=1
                title.expiry=updated_record_list[3]
                title.save()

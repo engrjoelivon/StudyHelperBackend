@@ -11,7 +11,7 @@ $(document).ready(function(){
     $("#Constructors").click(function(){
         $("#titledef").hide();
         $("#bodylist").show();
-
+        console.error("inside login");
         var out = '<ul><li>get_whole_record(self):- \n from its base class and implements the body Using the Title class and the username set in the constructor to get whole record from the titles table  </li>\n\
 <li>Item Two</li><li>Item Three</li></ul>';
     $('#bodylist').html(out);

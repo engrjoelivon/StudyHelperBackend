@@ -1,10 +1,12 @@
-import json
+
 from abc import ABCMeta, abstractmethod
-from basic.ActionCrudOperations import ActionsOperation
+from basic.VariesCrudOperation import get_table_name,get_table_object
 
 
 class CrudOperations(metaclass=ABCMeta):
     def __init__(self, user):
+        self.table_name=get_table_name()
+        self.table_object=get_table_object()
         self.username = user
         self.query_list = list()  # list that holds list of rows.Every row will be converted to a list,and the list added to this variable
         #********************attribute types*************************************#
@@ -39,7 +41,7 @@ class CrudOperations(metaclass=ABCMeta):
 
 
     @abstractmethod
-    def generate_record(self, list_holding_record,record):
+    def generate_record(self, list_holding_record):
         """
      :param list_holding_record: A list will be sent from client,this list will hold all the record,the order should be maintained so that the right values can be extracted,or betterstill insert values into list in ascending order from a to z,         method should be overriden to generate record that will be inserted into A TABLE,     After generating a record call save to save row in table
      :param record: will accept a table name
